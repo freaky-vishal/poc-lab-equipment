@@ -27,7 +27,7 @@ def forgotPassword(request):
                     i.password=request.POST['c_password']
                     i.save()
                     context={'message':"Password change successful!"}
-                    return render(request,"Login.html",context)
+                    return render(request,"Forgotpass.html",context)
                 else:
                     context={'message':"Password doesn't match!"}
                     return render(request,'Forgotpass.html',context)
@@ -45,11 +45,11 @@ def signup(request):
                 email_id=request.POST['email_id'],password=request.POST['password'],
                 proj_manager="Ananda",secret_code=request.POST['empid'][-2:] + 'oct')
                 user.save()
-                context={'message':"New User created!"}
-                return render(request,"Login.html",context) 
+                context={'message':"New User created! Click on login to redirect"}
+                return render(request,"Signup.html",context) 
         except IntegrityError:
             context={'message':"User exists!"}
-            return render(request,"Login.html",context) 
+            return render(request,"Signup.html",context) 
         else:
             context={'message':"Passwords doesn't match!"}
             return render(request,"Signup.html",context)  
