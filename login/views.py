@@ -13,7 +13,7 @@ def login(request):
                 return render(request,'Userhome.html',{'name':i.emp_name})#HttpResponseRedirect('user',{'name':i.emp_name})
         else:
             context={'message':"Check Employee ID, Password or Role!"}
-            return render(request,'login.html',context)
+            return render(request,'Login.html',context)
 
     return render(request,'Login.html')
 
