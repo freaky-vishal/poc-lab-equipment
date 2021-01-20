@@ -15,7 +15,7 @@ def login(request):
             context={'message':"Check Employee ID, Password or Role!"}
             return render(request,'login.html',context)
 
-    return render(request,'login.html')
+    return render(request,'Login.html')
 
 def forgotPassword(request):
     if request.method=="POST":
